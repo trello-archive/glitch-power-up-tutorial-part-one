@@ -1,0 +1,25 @@
+{
+  "name": "trello-power-up-tutorial-part-1",
+  "version": "0.0.1",
+  "description": "A Power-Up to go along with the tutorial found at tech.trello.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "cors": "^2.8.1"
+  },
+  "engines": {
+    "node": "6.10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/trello-power-up-tutorial-part-1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
