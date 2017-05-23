@@ -1,12 +1,12 @@
 /* global TrelloPowerUp */
 
-var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
-var estimateSelector = document.getElementById('estimate');
-
-document.getElementById('save').addEventListener('click', function(){
-  return t.set('card', 'shared', 'estimate', estimateSelector.value)
+// Elements with IDs are available as properties of `window`.
+window.estimate.addEventListener('submit', function(event){
+  // Stop the browser trying to submit the form itself.
+  event.preventDefault();
+  return t.set('card', 'shared', 'estimate', window.estimateSize.value)
   .then(function(){
     t.closePopup();
   });
@@ -15,10 +15,9 @@ document.getElementById('save').addEventListener('click', function(){
 t.render(function(){
   return t.get('card', 'shared', 'estimate')
   .then(function(estimate){
-    estimateSelector.value = estimate;
+    window.estimateSize.value = estimate;
   })
   .then(function(){
-    t.sizeTo('#content')
-    .done();
+    t.sizeTo('#estimate').done();
   });
 });
